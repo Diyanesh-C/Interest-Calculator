@@ -1,0 +1,7 @@
+{
+  "car":{
+    "price":1500000,
+    "tenureyears":1,
+    "interestrate":9.5
+  }
+}
