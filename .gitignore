@@ -1,4 +1,5 @@
 # Cypress-generated files
+cypress/screenshots/
 cypress/videos/
 
 # Node dependencies
