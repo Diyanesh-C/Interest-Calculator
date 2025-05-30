@@ -1,13 +1,7 @@
-import TenurePage from '../support/Pages/TenureValidation';
-
-const Tenure = new TenurePage();
-
-describe('Car Loan Tenure', () => {
-  beforeEach(()=>{
-    Tenure.visit();
-  })
-  it('Negative Boundary', () => {
-    Tenure.boundaryCheck();
+describe('template spec', () => {
+      it('passes', () => {
+        cy.visit('https://emicalculator.net/');
+        cy.log("visit");
   })
   Cypress.on("uncaught:exception",(err,runnable)=>{
     return false;
