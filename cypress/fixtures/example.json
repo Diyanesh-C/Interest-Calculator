@@ -1,7 +1,6 @@
 {
-  "car":{
-    "price":1500000,
-    "tenureyears":1,
-    "interestrate":9.5
-  }
+    "url" : "https://emicalculator.net/",
+    "loanAmount" : 1500000,
+    "interest" : 9.5,
+    "tenure" : 1
 }
