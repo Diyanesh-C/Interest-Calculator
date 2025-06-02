@@ -11,5 +11,6 @@ describe('HomeEMI',()=>{
     })
     it('Navigation To Home Loan',()=>{
         HomeEMI.navigationToHomeLoan();
+        HomeEMI.yearTableValidation();
     })
 })
