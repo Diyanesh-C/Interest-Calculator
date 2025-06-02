@@ -18,11 +18,15 @@ describe('',()=>{
     })
   })
 
-  it('',()=>{
+  it('Visiting the Website page',()=>{
     CarLoan.visit(url);
   })
 
-  it('',()=>{
+  it('Validating the given inputs',()=>{
     CarLoan.validinputs(loanAmount,interest,tenure);
+  })
+
+  it('Checking the interest value',()=>{
+    CarLoan.validateInterest();
   })
 })
