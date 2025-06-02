@@ -6,9 +6,12 @@ describe('Car Loan Tenure', () => {
   beforeEach(()=>{
     Tenure.visit(); 
   })
-  it('Negative Boundary', () => {
+  it('Boundary Check', () => {
     Tenure.boundaryCheck();
-})
+  })
+  it('Empty Value Check',()=>{
+    Tenure.emptinessCheck();
+  })
 Cypress.on("uncaught:exception",(err,runnable)=>{
   return false;
 })
