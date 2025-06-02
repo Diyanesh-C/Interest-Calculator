@@ -7,7 +7,11 @@ describe('Task 1',()=>{
     it('SCRUM 80',()=>{
         LoanTenure.visit();
         LoanTenure.selectLoanCalculator();
-        LoanTenure.enterValuesCheck();
+        LoanTenure.interestRateCheck();
+    })
+    
+    it('SCRUM 82',()=>{
+        LoanTenure.tenureCheckforYear();
     })
 
     Cypress.on("uncaught:exception",(err,runnable)=>{
