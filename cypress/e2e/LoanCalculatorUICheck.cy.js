@@ -3,7 +3,7 @@ import UIValidation from "../support/Pages/UIValidation";
 const ui = new UIValidation();
  
 describe('Loan EMI Calculator UI Validation via Menu', () => {
-  it.skip('should validate presence and usability of Loan, Interest, and Tenure inputs and sliders', () => {
+  it('should validate presence and usability of Loan, Interest, and Tenure inputs and sliders', () => {
     ui.visitHomePage();
     ui.navigateToLoanCalculator();
     ui.verifyUrl();
