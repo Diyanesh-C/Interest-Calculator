@@ -34,6 +34,10 @@ class HomeLoan{
         })
         cy.get('.row.no-margin.yearlypaymentdetails').should('have.length.greaterThan',0);
     }
+    tableExtraction(){
+        cy.get('.row.no-margin.yearlypaymentdetails').should('have.length.greaterThan',0);
+        cy.extractAndSaveTable('table.noextras', 'extracted_table.xlsx', 'DataSheet');
+    }
 }
 export default HomeLoan
 
