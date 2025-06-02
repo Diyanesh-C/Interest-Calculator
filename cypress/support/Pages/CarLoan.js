@@ -14,6 +14,13 @@ class CarLoan{
         });
 
     }
+    validateInterest()
+    {
+        cy.get('tr.row.no-margin.monthlypaymentdetails').first().find('td.currency').eq(1).invoke('text').then((interestValue) => {
+        cy.log('First Month Interest:', interestValue);
+         expect(interestValue).to.equal('₹ 11,875')
+         });
+    }
 }
 
 export default new CarLoan();
