@@ -55,6 +55,20 @@ module.exports = {
  
           console.log("Excel File Saved:", filePath);
           return null;
+        },
+        
+        readExcel({ fileName, sheetName}){
+          const downloadDir = path.join(__dirname,'downloads');
+          const filePath = path.join(downloadDir, fileName);
+
+          if(!fs.existsSync(filePath)){
+            throw new Error(`Excel file not found at ${filePath}`);
+          }
+          
+          const workbook = XLSX.readFile(filePath);
+          const worksheet = workbook.Sheets[sheetName];
+          const json = XLSX.utils.sheet_to_json(worksheet,{header : 1});
+          return json;
         }
       });
     },
