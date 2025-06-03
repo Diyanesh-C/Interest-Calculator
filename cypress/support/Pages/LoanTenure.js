@@ -41,6 +41,24 @@ class LoanTenure{
         })
     }
 
+    checkLoanAmount(){
+        cy.get('#loan-tenure-calc > .hidden-ts').click();
+        cy.get('#loanamount').invoke('val').then((val)=>{
+            cy.log(val);
+            var amt = val.split(',');
+            var value="";
+            amt.forEach(element => {
+            value+=element;
+            })
+            cy.log(value);
+            expect(Number(value)).to.be.a('number');
+        })
+
+        cy.get('#loanamount').clear().type('10000000').invoke('val').then((res)=>{
+            expect(Number(res)).to.equal(10000000)
+        })
+    }
+
 
 }
 
