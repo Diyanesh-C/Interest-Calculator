@@ -1,6 +1,6 @@
 import CarLoan from "../support/Pages/CarLoan";
 
-describe('',()=>{
+describe('CarEMI',()=>{
     let url;
     let loanAmount;
     let interest;
@@ -29,9 +29,12 @@ describe('',()=>{
   it('Checking the interest value',()=>{
     CarLoan.validateInterest();
   })
-  
+
   it('Validate the Loan with invalid input',()=>{
     CarLoan.validateLoan();
   })
 
+  it('Checking with the 0% interest',()=>{
+    CarLoan.validateEqual();
+  })
 })
