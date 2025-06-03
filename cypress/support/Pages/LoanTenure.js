@@ -28,6 +28,19 @@ class LoanTenure{
         })
     }
 
+    tenureCheckforMonth(){
+        cy.get('.input-group-append > .btn-group > :nth-child(2)').click();
+        cy.get('#loanterm').invoke('val').should('eq','60');
+        
+        cy.get('#loanterm').clear().type('360{enter}').invoke('val').then((el)=>{
+            expect(Number(el)).to.be.a('number')
+        })
+        cy.get('#loanterm').as('loanfield').clear().type('-240{enter}')
+        cy.get('@loanfield').invoke('val').then((res)=>{
+            expect(Number(res)).to.equal(240)
+        })
+    }
+
 
 }
 

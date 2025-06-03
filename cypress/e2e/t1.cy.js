@@ -14,6 +14,10 @@ describe('Task 1',()=>{
         LoanTenure.tenureCheckforYear();
     })
 
+    it('SCRUM 83',()=>{
+        LoanTenure.tenureCheckforMonth();
+    })
+
     Cypress.on("uncaught:exception",(err,runnable)=>{
         return false;
       })
