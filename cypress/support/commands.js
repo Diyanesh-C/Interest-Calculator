@@ -24,3 +24,47 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+// Cypress.Commands.add('extractAndSaveTable', (tableSelector, fileName, sheetName) =>{
+//     cy.get(tableSelector).should('be.visible').scrollIntoView().invoke('prop','outerHTML').then((tableHTML)=>{
+//         console.log(tableHTML);
+//         const parser = new DOMParser();
+//             const doc = parser.parseFromString(tableHTML, 'text/html');
+//             const rows = doc.querySelectorAll('tr');
+
+//             const tableData = Array.from(rows).map(row => {
+//                 Array.from(row.cells).map(cell => cell.textContent.trim());
+//             })
+//             cy.task('saveToExcel', {
+//                 data: tableData,
+//                 fileName : fileName ||'extracted_table.xlsx',
+//                 sheetName : sheetName||  'TableData'
+//             })
+//         })
+// })
+
+
+Cypress.Commands.add('extractAndSaveTable', (tableSelector, fileName, sheetName) =>{
+    cy.get(tableSelector).should('be.visible').scrollIntoView().invoke('prop','outerHTML').then((tableHTML)=>{
+        console.log(tableHTML);
+        const parser = new DOMParser();
+            const doc = parser.parseFromString(tableHTML, 'text/html');
+            const rows = doc.querySelectorAll('tr');
+            let tableData=[];
+            cy.get('table tr').each(($row)=>{
+                const rowData=[];
+                cy.wrap($row).find('th,td').each(($cell)=>{
+                    rowData.push($cell.text().trim());
+                }).then(()=>{
+                    tableData.push(rowData);
+                });
+            }).then(()=>{
+                cy.log(JSON.stringify(tableData));
+                cy.task('saveToExcel', {
+                    data: tableData,
+                    fileName : fileName ||'extracted_table.xlsx',
+                    sheetName : sheetName||  'TableData'
+                })
+            })
+ 
+        })
+})
