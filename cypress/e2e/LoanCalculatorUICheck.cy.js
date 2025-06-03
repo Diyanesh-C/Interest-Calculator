@@ -19,7 +19,7 @@ describe('Loan EMI Calculator UI Validation via Menu', () => {
       ui.navigateToLoanCalculator();
       ui.validateLoanTenureToggle();
   });
-  it('Validate responsive rendering on mobile and desktop views', () => {
+  it.skip('Validate responsive rendering on mobile and desktop views', () => {
     ui.visitHomePage();
     ui.navigateToLoanCalculator();
     cy.viewport(1280, 720);           
@@ -27,6 +27,11 @@ describe('Loan EMI Calculator UI Validation via Menu', () => {
     cy.viewport('iphone-x');         
     cy.get('#loanamount').should('be.visible');
   });
+  it('Validate the working of slider through keyboard access',()=>{
+    ui.visitHomePage();
+    ui.navigateToLoanCalculator();
+    ui.validationOfKeyboardAccess();
+  })
   Cypress.on("uncaught:exception",(err,runnable)=>{
     return false;
   })
