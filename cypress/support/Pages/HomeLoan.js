@@ -38,6 +38,22 @@ class HomeLoan{
         cy.get('.row.no-margin.yearlypaymentdetails').should('have.length.greaterThan',0);
         cy.extractAndSaveTable('table.noextras', 'extracted_table.xlsx', 'DataSheet');
     }
+    readExcelValidation(){
+        const fileName = 'extracted_table.xlsx';
+        const sheetName = 'DataSheet';
+
+        cy.task('readExcel',{fileName, sheetName }).then((data)=>{
+            expect(data.length).to.be.greaterThan(12);
+            const filteredData = data.slice(11);
+
+            const expectedHeader = ['Year', 'Principal', 'Interest', 'Taxes, Home Insurance & Maintenance (C)', 'Total Payment(A + B + C)','Balance','Loan Paid To Date'];
+            const actualHeader = filteredData[0].map(cell=>cell.trim());
+
+            expect(actualHeader[0]).includes(expectedHeader[0]);
+            cy.log('Header:',JSON.stringify(actualHeader));
+            cy.log('First Row:', JSON.stringify(filteredData[1]));
+        })
+    }
 }
 export default HomeLoan
 

@@ -18,4 +18,7 @@ describe('HomeEMI',()=>{
     it('Extracting Values and storing it in excel',()=>{
         HomeEMI.tableExtraction();
     })
+    it('Verify Excel file matches displayed table',()=>{
+        HomeEMI.readExcelValidation();
+    })
 })
