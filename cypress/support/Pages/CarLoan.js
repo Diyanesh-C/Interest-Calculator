@@ -21,6 +21,11 @@ class CarLoan{
          expect(interestValue).to.equal('₹ 11,875')
          });
     }
+    validateLoan()
+    {
+        cy.get('#loanamount').clear().type('-1400000').type('{enter}');
+        cy.log("This is invalid input but it gives the calculation of the EMI Calculation");
+    }
 }
 
 export default new CarLoan();
