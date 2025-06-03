@@ -29,4 +29,9 @@ describe('',()=>{
   it('Checking the interest value',()=>{
     CarLoan.validateInterest();
   })
+  
+  it('Validate the Loan with invalid input',()=>{
+    CarLoan.validateLoan();
+  })
+
 })
