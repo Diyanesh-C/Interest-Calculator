@@ -61,6 +61,22 @@ class UIValidation {
         expect(Number(val)).to.equal(15.5);
       });
   }
+  validateLoanTenureToggle() {
+    cy.get('.input-group-append > .btn-group > :nth-child(2)').click({ force: true });
+    cy.get('.input-group-append > .btn-group > :nth-child(2)')
+      .should('have.class', 'active')
+      .and('be.visible');
+ 
+    cy.get('#loanterm').clear().type('240');
+    cy.get('#loanterm').should('have.value', '240');
+    cy.get('#loanyears').click({ force: true });
+    cy.get('.input-group-append > .btn-group > :nth-child(1)')
+      .should('have.class', 'active')
+      .and('be.visible');
+
+    cy.get('#loanterm').clear().type('20{enter}');
+    cy.get('#loanterm').should('have.value', '20');  
+  }
 }
 
 export default UIValidation;
