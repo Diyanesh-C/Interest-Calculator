@@ -14,6 +14,11 @@ describe('Loan EMI Calculator UI Validation via Menu', () => {
     ui.navigateToLoanCalculator();
     ui.verifyBiDirectionalSync();
   });
+  it('should toggle between years and months and validate input/slider behavior', () => {
+      ui.visitHomePage();
+      ui.navigateToLoanCalculator();
+      ui.validateLoanTenureToggle();
+  });
   Cypress.on("uncaught:exception",(err,runnable)=>{
     return false;
   })
