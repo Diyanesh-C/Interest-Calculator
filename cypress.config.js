@@ -15,10 +15,14 @@ module.exports = {
   "video": true,
   "scrollBehavior": "nearest",
   "chromeWebSecurity": false,
+  env:{
+    grepFilterSpecs : true
+  },
   e2e: {
     "testIsolation" : false,
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      require('cypress-grep/src/plugin')(config);
       require('cypress-mochawesome-reporter/plugin')(on);
       require('cypress-grep/src/plugin')(config)
       // on('task' ,{
