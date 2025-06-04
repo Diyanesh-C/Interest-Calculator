@@ -3,20 +3,20 @@ import TenurePage from '../support/Pages/TenureValidation';
 const Tenure = new TenurePage();
 
 describe('Car Loan Tenure', () => {
-    
+
   beforeEach(()=>{
     Tenure.visit(); 
   })
 
-  it('Boundary Check', () => {
+  it('should check with the unrealistic values', () => {
     Tenure.boundaryCheck();
   })
 
-  it('Empty Value Check',()=>{
+  it('should check with the empty value',()=>{
     Tenure.emptinessCheck();
   })
 
-  it('Non-Numberic Value Validation',()=>{
+  it('should validate with the non-numberic value',()=>{
     Tenure.nonNumericValidation();
   })
 Cypress.on("uncaught:exception",(err,runnable)=>{
