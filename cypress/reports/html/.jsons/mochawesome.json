@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 3,
+    "failures": -2,
+    "start": "2025-06-04T12:37:19.774Z",
+    "end": "2025-06-04T12:38:24.792Z",
+    "duration": 65018,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 60,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bd424b8c-435d-45c7-b1b7-939b097e64a4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\CarLoan.cy.js",
+      "file": "cypress\\e2e\\CarLoan.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a35ccdd6-bd81-4f19-8326-9af9323b50f0",
+          "title": "CarEMI",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Visiting the Website page",
+              "fullTitle": "CarEMI Visiting the Website page",
+              "timedOut": null,
+              "duration": 20865,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\CarLoan.cy.js\"\n}",
+              "code": "_CarLoan.default.visit(testData.Car.url);",
+              "err": {},
+              "uuid": "5516e4da-fdc3-4b04-843f-99fbb70df907",
+              "parentUUID": "a35ccdd6-bd81-4f19-8326-9af9323b50f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validating the given inputs",
+              "fullTitle": "CarEMI Validating the given inputs",
+              "timedOut": null,
+              "duration": 41291,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\CarLoan.cy.js\"\n}",
+              "code": "_CarLoan.default.visit(testData.Car.url);\n_CarLoan.default.validinputs(testData.Car.loanAmount, testData.Car.interest, testData.Car.tenure);",
+              "err": {},
+              "uuid": "ca9ae589-0580-4858-8c1a-6d540dd69f1f",
+              "parentUUID": "a35ccdd6-bd81-4f19-8326-9af9323b50f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Checking the interest value",
+              "fullTitle": "CarEMI Checking the interest value",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress\\\\e2e\\\\CarLoan.cy.js\"\n}",
+              "code": "_CarLoan.default.validateInterest();",
+              "err": {},
+              "uuid": "10f08b12-3def-4879-a2a8-d434fd88fa78",
+              "parentUUID": "a35ccdd6-bd81-4f19-8326-9af9323b50f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate the Loan with invalid input",
+              "fullTitle": "CarEMI Validate the Loan with invalid input",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress\\\\e2e\\\\CarLoan.cy.js\"\n}",
+              "code": "_CarLoan.default.validateLoan();",
+              "err": {},
+              "uuid": "04f7ba60-72b0-4681-a92a-c93d7df23926",
+              "parentUUID": "a35ccdd6-bd81-4f19-8326-9af9323b50f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Checking with the 0% interest",
+              "fullTitle": "CarEMI Checking with the 0% interest",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress\\\\e2e\\\\CarLoan.cy.js\"\n}",
+              "code": "_CarLoan.default.validateEqual();",
+              "err": {},
+              "uuid": "8ff6b44e-96a4-4575-987e-63f9ae4b0e70",
+              "parentUUID": "a35ccdd6-bd81-4f19-8326-9af9323b50f0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5516e4da-fdc3-4b04-843f-99fbb70df907",
+            "ca9ae589-0580-4858-8c1a-6d540dd69f1f"
+          ],
+          "failures": [],
+          "pending": [
+            "10f08b12-3def-4879-a2a8-d434fd88fa78",
+            "04f7ba60-72b0-4681-a92a-c93d7df23926",
+            "8ff6b44e-96a4-4575-987e-63f9ae4b0e70"
+          ],
+          "skipped": [],
+          "duration": 62156,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -9,7 +9,7 @@ describe('HomeEMI',()=>{
     before(function(){
         HomeEMI.visit();
     })
-    it('Navigation To Home Loan',()=>{
+    it('Navigation To Home Loan',{tags: ['@smoke']},()=>{
         HomeEMI.navigationToHomeLoan();
     })
     it('calculation and display of year-on-year EMI table',()=>{

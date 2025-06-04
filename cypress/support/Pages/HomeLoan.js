@@ -1,3 +1,5 @@
+import data from '../../fixtures/example.json';
+
 class HomeLoan{
     visit(){
         cy.visit('https://emicalculator.net/');
@@ -10,16 +12,16 @@ class HomeLoan{
         cy.get('.homeloanemicalculatorcontainer').should('be.visible');
     }
     yearTableValidation(){
-        cy.get('#homeprice').click().clear().type('60,00,000 {enter}');
-        cy.get('#downpayment').click().clear().type('10 {enter}');
-        cy.get('#homeloaninsuranceamount').click().clear().type('0 {enter}');
-        cy.get('#homeloaninterest').click().clear().type('8 {enter}');
-        cy.get('#homeloanterm').click().clear().type('10 {enter}');
-        cy.get('#loanfees').click().clear().type('0.15 {enter} ');
-        cy.get('#onetimeexpenses').click().clear().type('15 {enter}');
-        cy.get('#propertytaxes').click().clear().type('0.15 {enter}');
-        cy.get('#homeinsurance').click().clear().type('0.10 {enter}');
-        cy.get('#maintenanceexpenses').click().clear().type('3000 {enter}');
+        cy.get('#homeprice').click().clear().type('data.Home.homeprice');
+        cy.get('#downpayment').click().clear().type('data.Home.downpayment');
+        cy.get('#homeloaninsuranceamount').click().clear().type('data.Home.homeloaninsuranceamount');
+        cy.get('#homeloaninterest').click().clear().type('data.Home.homeloaninterest');
+        cy.get('#homeloanterm').click().clear().type('data.Home.homeloanterm');
+        cy.get('#loanfees').click().clear().type('data.Home.loanfees');
+        cy.get('#onetimeexpenses').click().clear().type('data.Home.onetimeexpenses');
+        cy.get('#propertytaxes').click().clear().type('data.Home.propertytaxes');
+        cy.get('#homeinsurance').click().clear().type('data.Home.homeinsurance');
+        cy.get('#maintenanceexpenses').click().clear().type('data.Home.maintenanceexpenses');
         cy.get('.noextras').scrollIntoView();
         cy.get('.noextras').should('be.visible');
         cy.get('.row.no-margin th').should('have.length.greaterThan',0);

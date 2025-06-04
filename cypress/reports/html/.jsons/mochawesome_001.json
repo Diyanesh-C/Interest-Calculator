@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 3,
+    "failures": -2,
+    "start": "2025-06-04T12:38:30.469Z",
+    "end": "2025-06-04T12:39:32.213Z",
+    "duration": 61744,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 75,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5036677a-19f0-4be2-9a19-6cf7e1b96d4f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\HomeSpec.cy.js",
+      "file": "cypress\\e2e\\HomeSpec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1a58fbd7-9f31-4d36-9572-001d19975a45",
+          "title": "HomeEMI",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigation To Home Loan",
+              "fullTitle": "HomeEMI Navigation To Home Loan",
+              "timedOut": null,
+              "duration": 59932,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\HomeSpec.cy.js\"\n}",
+              "code": "HomeEMI.navigationToHomeLoan();",
+              "err": {},
+              "uuid": "b954f1d9-9425-4c28-8378-9e3ff6ae1527",
+              "parentUUID": "1a58fbd7-9f31-4d36-9572-001d19975a45",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "calculation and display of year-on-year EMI table",
+              "fullTitle": "HomeEMI calculation and display of year-on-year EMI table",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress\\\\e2e\\\\HomeSpec.cy.js\"\n}",
+              "code": "HomeEMI.yearTableValidation();",
+              "err": {},
+              "uuid": "96fa5f64-19c8-4e10-8a27-99dec62a9af9",
+              "parentUUID": "1a58fbd7-9f31-4d36-9572-001d19975a45",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Extracting Values and storing it in excel",
+              "fullTitle": "HomeEMI Extracting Values and storing it in excel",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress\\\\e2e\\\\HomeSpec.cy.js\"\n}",
+              "code": "HomeEMI.tableExtraction();",
+              "err": {},
+              "uuid": "596f3560-8b09-4092-a3c5-bbb01db67106",
+              "parentUUID": "1a58fbd7-9f31-4d36-9572-001d19975a45",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Excel file matches displayed table",
+              "fullTitle": "HomeEMI Verify Excel file matches displayed table",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress\\\\e2e\\\\HomeSpec.cy.js\"\n}",
+              "code": "HomeEMI.readExcelValidation();",
+              "err": {},
+              "uuid": "3843f133-0730-4d95-a40e-9c4c973d0d3a",
+              "parentUUID": "1a58fbd7-9f31-4d36-9572-001d19975a45",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b954f1d9-9425-4c28-8378-9e3ff6ae1527"
+          ],
+          "failures": [],
+          "pending": [
+            "96fa5f64-19c8-4e10-8a27-99dec62a9af9",
+            "596f3560-8b09-4092-a3c5-bbb01db67106",
+            "3843f133-0730-4d95-a40e-9c4c973d0d3a"
+          ],
+          "skipped": [],
+          "duration": 59932,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
