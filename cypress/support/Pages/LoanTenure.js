@@ -10,10 +10,12 @@ class LoanTenure{
     }
 
     interestRateCheck(){
+        cy.get('#loaninterest').clear().type('-1{enter}');// value should accept within range but it is accepting lesser than range
+        cy.get('#loaninterest').clear().type('0{enter}');
+        cy.get('#loaninterest').clear().type('1{enter}');
         cy.get('#loaninterest').clear().type('20{enter}');
         cy.get('#loaninterest').clear().type('50{enter}');// value should accept within range but it is accepting greater than range
-        cy.get('#loaninterest').clear().type('0{enter}');
-        cy.get('#loaninterest').clear().type('-1{enter}');// value should accept within range but it is accepting lesser than range
+        
     }
 
     tenureCheckforYear(){

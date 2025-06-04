@@ -3,9 +3,12 @@
 import LoanTenure from "../support/Pages/LoanTenure";
 
 describe('Task 1',()=>{  
+
+    before('Visiting the website',()=>{
+        LoanTenure.visit();
+    })
     
     it('SCRUM 80',()=>{
-        LoanTenure.visit();
         LoanTenure.selectLoanCalculator();
         LoanTenure.interestRateCheck();
     })
