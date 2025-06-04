@@ -3,6 +3,9 @@ const path = require('path');
 const XLSX = require('xlsx');
 
 module.exports = {
+  env: {
+    grepFilterSpecs: true,
+  },
   "reporter": "cypress-mochawesome-reporter",
   "defaultCommandTimeout": 30000,
   "retries": {
@@ -17,6 +20,7 @@ module.exports = {
     setupNodeEvents(on, config) {
       // implement node event listeners here
       require('cypress-mochawesome-reporter/plugin')(on);
+      require('cypress-grep/src/plugin')(config)
       // on('task' ,{
       //   saveToExcel({ data, fileName, sheetName }) {
       //     const worksheet = XLSX.utils.aoa_to_sheet(data);
@@ -71,6 +75,7 @@ module.exports = {
           return json;
         }
       });
+      return config;
     },
   },
 };
