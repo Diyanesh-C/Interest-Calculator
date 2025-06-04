@@ -1,29 +1,23 @@
 import CarLoan from "../support/Pages/CarLoan";
-
 describe('CarEMI',()=>{
-    let url;
-    let loanAmount;
-    let interest;
-    let tenure;
+    let testData;
   beforeEach(()=>{
     Cypress.on('uncaught:exception',()=> false);
   })
 
   before('',()=>{
     cy.fixture('example').then((data)=>{
-        url = data.url;
-        loanAmount= data.loanAmount;
-        interest = data.interest;
-        tenure =  data.tenure;
+        testData = data;
     })
   })
 
-  it('Visiting the Website page',()=>{
-    CarLoan.visit(url);
+  it('Visiting the Website page',{ tags : ['@smoke']},()=>{
+    CarLoan.visit(testData.Car.url);
   })
 
-  it('Validating the given inputs',()=>{
-    CarLoan.validinputs(loanAmount,interest,tenure);
+  it('Validating the given inputs',{tags : ['@smoke']},()=>{
+    CarLoan.visit(testData.Car.url);
+    CarLoan.validinputs(testData.Car.loanAmount,testData.Car.interest,testData.Car.tenure);
   })
 
   it('Checking the interest value',()=>{

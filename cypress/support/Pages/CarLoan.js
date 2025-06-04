@@ -17,9 +17,11 @@ class CarLoan{
     }
     validateInterest()
     {
-        cy.get('tr.row.no-margin.monthlypaymentdetails').first().find('td.currency').eq(1).invoke('text').then((interestValue) => {
+        cy.get('tr.row.no-margin.monthlypaymentdetails').
+        first().find('td.currency').eq(1).
+        invoke('text').then((interestValue) => {
         cy.log('First Month Interest:', interestValue);
-         expect(interestValue).to.equal('₹ 11,875')
+         expect(interestValue).to.equal('₹ 11,875');
          });
     }
     validateLoan()
@@ -31,6 +33,7 @@ class CarLoan{
     {
         cy.get('#loanamount').clear().type('2000000').type('{enter}');
         cy.get('#loaninterest').clear().type('0').type('{enter}');
+        cy.log("This is invalid as it changes into the default value and not showing any error message");
         cy.get('#loaninterest').should('have.value','0');
     }
 }

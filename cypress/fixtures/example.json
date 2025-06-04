@@ -1,6 +1,8 @@
 {
-    "url" : "https://emicalculator.net/",
+  "Car" : { "url" : "https://emicalculator.net/",
     "loanAmount" : 1500000,
     "interest" : 9.5,
     "tenure" : 1
+   }
+
 }
