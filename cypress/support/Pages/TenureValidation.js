@@ -5,12 +5,12 @@ class TenureValidation{
     boundaryCheck(){
         cy.get('#car-loan').click();
         cy.get('#loanterm').click().clear();
-        cy.get('#loanterm').type('-2 {enter}');  
+        cy.get('#loanterm').type('-235 {enter}');  
         cy.log("Enter only Positive Value");
         //if the entered value is less than 1, appropriate error message should be thrown
     
         cy.get('#loanterm').click().clear();
-        cy.get('#loanterm').type('8 {enter}'); 
+        cy.get('#loanterm').type('100 {enter}'); 
         cy.log('Maximium value should be less than or equal to 7');
         //if the entered value is greater than 7, appropriate error message should be thrown
     }
