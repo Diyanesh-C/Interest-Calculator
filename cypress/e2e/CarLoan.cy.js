@@ -31,4 +31,4 @@ describe('CarEMI',()=>{
   it('Checking with the 0% interest',()=>{
     CarLoan.validateEqual();
   })
-})
+});
