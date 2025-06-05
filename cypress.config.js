@@ -24,22 +24,6 @@ module.exports = {
       // implement node event listeners here
       require('cypress-grep/src/plugin')(config);
       require('cypress-mochawesome-reporter/plugin')(on);
-      require('cypress-grep/src/plugin')(config)
-      // on('task' ,{
-      //   saveToExcel({ data, fileName, sheetName }) {
-      //     const worksheet = XLSX.utils.aoa_to_sheet(data);
-      //     const workbook = XLSX.utils.book_new();
-      //     XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
-
-      //     const downloadDir = path.join(__dirname, 'downloads');
-      //     if(!fs.existsSync(downloadDir)){
-      //       fs.mkdirSync(downloadDir);
-      //     }
-      //     const filePath = path.join(downloadDir, fileName);
-      //     XLSX.writeFile(workbook, filePath);
-      //     return null;
-      //   }
-      // })
       on('task', {
         saveToExcel({ data, fileName, sheetName }) {
           console.log("Received Data for Excel:", data);
@@ -53,7 +37,7 @@ module.exports = {
           const workbook = XLSX.utils.book_new();
           XLSX.utils.book_append_sheet(workbook, worksheet, sheetName);
  
-          const downloadDir = path.join(__dirname, 'downloads');
+          const downloadDir = path.join(__dirname,'cypress', 'downloads');
           if (!fs.existsSync(downloadDir)) {
             fs.mkdirSync(downloadDir);
           }
@@ -66,7 +50,7 @@ module.exports = {
         },
         
         readExcel({ fileName, sheetName}){
-          const downloadDir = path.join(__dirname,'downloads');
+          const downloadDir = path.join(__dirname,'cypress','downloads');
           const filePath = path.join(downloadDir, fileName);
 
           if(!fs.existsSync(filePath)){

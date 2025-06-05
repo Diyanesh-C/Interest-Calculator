@@ -38,7 +38,7 @@ class HomeLoan{
     }
     tableExtraction(){
         cy.get('.row.no-margin.yearlypaymentdetails').should('have.length.greaterThan',0);
-        cy.extractAndSaveTable('table.noextras', 'extracted_table.xlsx', 'DataSheet');
+        cy.extractAndSaveTable('extracted_table.xlsx', 'DataSheet');
     }
     readExcelValidation(){
         const fileName = 'extracted_table.xlsx';

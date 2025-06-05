@@ -2,7 +2,7 @@ import TenurePage from '../support/Pages/TenureValidation';
 
 const Tenure = new TenurePage();
 
-describe('Car Loan Tenure', () => {
+describe('Error message validation', () => {
 
   beforeEach(()=>{
     Tenure.visit(); 

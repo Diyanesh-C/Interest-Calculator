@@ -1,27 +1,25 @@
-//import LoanTenure from '../pages/LoanTenure';
-
 import LoanTenure from "../support/Pages/LoanTenure";
 
-describe('Task 1',()=>{  
+describe('Validation of fields',()=>{  
 
     before('Visiting the website',()=>{
         LoanTenure.visit();
     })
     
-    it('SCRUM 80',()=>{
+    it('Navigating and validating the interest rate field',()=>{
         LoanTenure.selectLoanCalculator();
         LoanTenure.interestRateCheck();
     })
     
-    it('SCRUM 82',()=>{
+    it('Validating the loan tenure field in years',()=>{
         LoanTenure.tenureCheckforYear();
     })
 
-    it('SCRUM 83',()=>{
+    it('Validating the loan tenure field in months',()=>{
         LoanTenure.tenureCheckforMonth();
     })
 
-    it('SCRUM 84',()=>{
+    it('Validating the loan amount field',()=>{
         LoanTenure.checkLoanAmount();
     })
 
