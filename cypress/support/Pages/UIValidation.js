@@ -61,6 +61,60 @@ class UIValidation {
         expect(Number(val)).to.equal(15.5);
       });
   }
+  validateLoanTenureToggle() {
+    cy.get('.input-group-append > .btn-group > :nth-child(2)').click({ force: true });
+    cy.get('.input-group-append > .btn-group > :nth-child(2)')
+      .should('have.class', 'active')
+      .and('be.visible');
+ 
+    cy.get('#loanterm').clear().type('240');
+    cy.get('#loanterm').should('have.value', '240');
+    cy.get('#loanyears').click({ force: true });
+    cy.get('.input-group-append > .btn-group > :nth-child(1)')
+      .should('have.class', 'active')
+      .and('be.visible');
+
+    cy.get('#loanterm').clear().type('20{enter}');
+    cy.get('#loanterm').should('have.value', '20');  
+  }
+  validationOfKeyboardAccess(){
+    cy.get("#loanamountslider").click().type("{rightarrow}{rightarrow}");
+    cy.wait(500); 
+    cy.get("#loanamount")
+      .invoke("val")
+      .then((val) => {
+        cy.log(val);
+        var arryofval=val.split(",");
+        var value="";
+        arryofval.forEach(element => {
+          value+=element;
+        });
+        cy.log(value);
+        expect(Number(value)).to.be.greaterThan(1200000);
+      });
+
+
+    cy.get("#loaninterestslider").click().type("{leftarrow}");
+    cy.wait(500);
+    cy.get("#loaninterest")
+      .invoke("val")
+      .then((val) => {
+        expect(Number(val)).to.be.lessThan(10);
+      });
+
+    
+    cy.get("#loanterm").clear().type("3{enter}");
+    cy.get('#loantermslider > .ui-slider-handle').should('have.attr', 'style')
+    .and('contain', 'left: 10%');
+
+    cy.get("#loantermslider").click().type("{rightarrow}");
+    cy.wait(500);
+    cy.get("#loanterm")
+      .invoke("val")
+      .then((val) => {
+        expect(Number(val)).to.equal(15.5);
+      });
+  }
 }
 
 export default UIValidation;

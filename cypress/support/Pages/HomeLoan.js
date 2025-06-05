@@ -1,3 +1,5 @@
+import data from '../../fixtures/example.json';
+
 class HomeLoan{
     visit(){
         cy.visit('https://emicalculator.net/');
@@ -10,16 +12,16 @@ class HomeLoan{
         cy.get('.homeloanemicalculatorcontainer').should('be.visible');
     }
     yearTableValidation(){
-        cy.get('#homeprice').click().clear().type('60,00,000 {enter}');
-        cy.get('#downpayment').click().clear().type('10 {enter}');
-        cy.get('#homeloaninsuranceamount').click().clear().type('0 {enter}');
-        cy.get('#homeloaninterest').click().clear().type('8 {enter}');
-        cy.get('#homeloanterm').click().clear().type('10 {enter}');
-        cy.get('#loanfees').click().clear().type('0.15 {enter} ');
-        cy.get('#onetimeexpenses').click().clear().type('15 {enter}');
-        cy.get('#propertytaxes').click().clear().type('0.15 {enter}');
-        cy.get('#homeinsurance').click().clear().type('0.10 {enter}');
-        cy.get('#maintenanceexpenses').click().clear().type('3000 {enter}');
+        cy.get('#homeprice').click().clear().type(data.Home.homeprice);
+        cy.get('#downpayment').click().clear().type(data.Home.downpayment);
+        cy.get('#homeloaninsuranceamount').click().clear().type(data.Home.homeloaninsuranceamount);
+        cy.get('#homeloaninterest').click().clear().type(data.Home.homeloaninterest);
+        cy.get('#homeloanterm').click().clear().type(data.Home.homeloanterm);
+        cy.get('#loanfees').click().clear().type(data.Home.loanfees);
+        cy.get('#onetimeexpenses').click().clear().type(data.Home.onetimeexpenses);
+        cy.get('#propertytaxes').click().clear().type(data.Home.propertytaxes);
+        cy.get('#homeinsurance').click().clear().type(data.Home.homeinsurance);
+        cy.get('#maintenanceexpenses').click().clear().type(data.Home.maintenanceexpenses);
         cy.get('.noextras').scrollIntoView();
         cy.get('.noextras').should('be.visible');
         cy.get('.row.no-margin th').should('have.length.greaterThan',0);
@@ -33,6 +35,26 @@ class HomeLoan{
             expect(text).to.include('Loan Paid To Date')
         })
         cy.get('.row.no-margin.yearlypaymentdetails').should('have.length.greaterThan',0);
+    }
+    tableExtraction(){
+        cy.get('.row.no-margin.yearlypaymentdetails').should('have.length.greaterThan',0);
+        cy.extractAndSaveTable('table.noextras', 'extracted_table.xlsx', 'DataSheet');
+    }
+    readExcelValidation(){
+        const fileName = 'extracted_table.xlsx';
+        const sheetName = 'DataSheet';
+
+        cy.task('readExcel',{fileName, sheetName }).then((data)=>{
+            expect(data.length).to.be.greaterThan(12);
+            const filteredData = data.slice(11);
+
+            const expectedHeader = ['Year', 'Principal', 'Interest', 'Taxes, Home Insurance & Maintenance (C)', 'Total Payment(A + B + C)','Balance','Loan Paid To Date'];
+            const actualHeader = filteredData[0].map(cell=>cell.trim());
+
+            expect(actualHeader[0]).includes(expectedHeader[0]);
+            cy.log('Header:',JSON.stringify(actualHeader));
+            cy.log('First Row:', JSON.stringify(filteredData[1]));
+        })
     }
 }
 export default HomeLoan

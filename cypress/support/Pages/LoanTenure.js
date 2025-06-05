@@ -28,6 +28,37 @@ class LoanTenure{
         })
     }
 
+    tenureCheckforMonth(){
+        cy.get('.input-group-append > .btn-group > :nth-child(2)').click();
+        cy.get('#loanterm').invoke('val').should('eq','60');
+        
+        cy.get('#loanterm').clear().type('360{enter}').invoke('val').then((el)=>{
+            expect(Number(el)).to.be.a('number')
+        })
+        cy.get('#loanterm').as('loanfield').clear().type('-240{enter}')
+        cy.get('@loanfield').invoke('val').then((res)=>{
+            expect(Number(res)).to.equal(240)
+        })
+    }
+
+    checkLoanAmount(){
+        cy.get('#loan-tenure-calc > .hidden-ts').click();
+        cy.get('#loanamount').invoke('val').then((val)=>{
+            cy.log(val);
+            var amt = val.split(',');
+            var value="";
+            amt.forEach(element => {
+            value+=element;
+            })
+            cy.log(value);
+            expect(Number(value)).to.be.a('number');
+        })
+
+        cy.get('#loanamount').clear().type('10000000').invoke('val').then((res)=>{
+            expect(Number(res)).to.equal(10000000)
+        })
+    }
+
 
 }
 

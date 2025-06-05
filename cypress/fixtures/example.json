@@ -1,6 +1,19 @@
 {
-    "url" : "https://emicalculator.net/",
+  "Car" : { "url" : "https://emicalculator.net/",
     "loanAmount" : 1500000,
     "interest" : 9.5,
     "tenure" : 1
+   },
+   "Home":{
+    "homeprice": "60,00,000",
+    "downpayment": 10,
+    "homeloaninsuranceamount": 0,
+    "homeloaninterest": 8,
+    "homeloanterm":10,
+    "loanfees":0.15,
+    "onetimeexpenses": 15,
+    "propertytaxes": 0.15,
+    "homeinsurance": 0.10,
+    "maintenanceexpenses": 3000
+   }
 }

@@ -14,6 +14,7 @@ class TenureValidation{
         cy.log('Maximium value should be less than or equal to 7');
         //if the entered value is greater than 7, appropriate error message should be thrown
     }
+
     emptinessCheck(){
         cy.get('#menu-item-dropdown-2696').click();
         cy.get('#menu-item-3294 > .dropdown-item').click();
@@ -21,6 +22,14 @@ class TenureValidation{
         cy.get('#maintenanceexpenses').click().clear();
         cy.log('Enter the Valid Home Value and Expense per month');
         //after clearing the home loan value and the Maintenance Expenses/month option, it displays zero as the result 
+    }
+
+    nonNumericValidation(){
+        cy.get('#menu-item-dropdown-2696').click();
+        cy.get('#menu-item-3294 > .dropdown-item').click();
+        cy.get('#homeloaninterest').click().clear();
+        cy.get('#homeloaninterest').type('qwer@');
+        cy.log('Enter the numberic value in the Interest Rate Field');
     }
 
 }
