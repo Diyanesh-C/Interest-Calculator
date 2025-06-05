@@ -3,9 +3,6 @@ const path = require('path');
 const XLSX = require('xlsx');
 
 module.exports = {
-  env: {
-    grepFilterSpecs: true,
-  },
   "reporter": "cypress-mochawesome-reporter",
   "defaultCommandTimeout": 30000,
   "retries": {

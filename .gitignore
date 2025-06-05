@@ -1,6 +1,8 @@
 # Cypress-generated files
 cypress/screenshots/
 cypress/videos/
+cypress/downloads/
+cypress/reports/
 
 # Node dependencies
 node_modules/
