@@ -12,16 +12,16 @@ class HomeLoan{
         cy.get('.homeloanemicalculatorcontainer').should('be.visible');
     }
     yearTableValidation(){
-        cy.get('#homeprice').click().clear().type('data.Home.homeprice');
-        cy.get('#downpayment').click().clear().type('data.Home.downpayment');
-        cy.get('#homeloaninsuranceamount').click().clear().type('data.Home.homeloaninsuranceamount');
-        cy.get('#homeloaninterest').click().clear().type('data.Home.homeloaninterest');
-        cy.get('#homeloanterm').click().clear().type('data.Home.homeloanterm');
-        cy.get('#loanfees').click().clear().type('data.Home.loanfees');
-        cy.get('#onetimeexpenses').click().clear().type('data.Home.onetimeexpenses');
-        cy.get('#propertytaxes').click().clear().type('data.Home.propertytaxes');
-        cy.get('#homeinsurance').click().clear().type('data.Home.homeinsurance');
-        cy.get('#maintenanceexpenses').click().clear().type('data.Home.maintenanceexpenses');
+        cy.get('#homeprice').click().clear().type(data.Home.homeprice);
+        cy.get('#downpayment').click().clear().type(data.Home.downpayment);
+        cy.get('#homeloaninsuranceamount').click().clear().type(data.Home.homeloaninsuranceamount);
+        cy.get('#homeloaninterest').click().clear().type(data.Home.homeloaninterest);
+        cy.get('#homeloanterm').click().clear().type(data.Home.homeloanterm);
+        cy.get('#loanfees').click().clear().type(data.Home.loanfees);
+        cy.get('#onetimeexpenses').click().clear().type(data.Home.onetimeexpenses);
+        cy.get('#propertytaxes').click().clear().type(data.Home.propertytaxes);
+        cy.get('#homeinsurance').click().clear().type(data.Home.homeinsurance);
+        cy.get('#maintenanceexpenses').click().clear().type(data.Home.maintenanceexpenses);
         cy.get('.noextras').scrollIntoView();
         cy.get('.noextras').should('be.visible');
         cy.get('.row.no-margin th').should('have.length.greaterThan',0);
