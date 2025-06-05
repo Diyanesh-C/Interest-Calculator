@@ -2,7 +2,7 @@ import HomeLoan from "../support/Pages/HomeLoan";
 
 const HomeEMI = new HomeLoan();
 
-describe('HomeEMI',()=>{
+describe('HomeEMI ',()=>{
     Cypress.on('uncaught:exception',(err,runnable)=>{
         return false;
     })
